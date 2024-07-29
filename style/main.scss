@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: hsl(47, 88%, 63%);
+  article {
+    width: min(90dvw, 400px);
+    border: 1px solid #000;
+    border-radius: 1rem;
+    padding: 1rem;
+    background: hsl(0, 0%, 100%);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    overflow: hidden;
+    &:hover {
+      h1 {
+        color: hsl(47, 88%, 63%);
+        &::after {
+          width: 100%;
+        }
+      }
+      p.date {
+        margin-left: 1.5rem;
+        &::before {
+          left: -25px;
+          display: block;
+          opacity: 1;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      border-radius: 1rem;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 1rem;
+      &.btn {
+        font-weight: bold;
+        background: hsl(47, 88%, 63%);
+        width: fit-content;
+        padding: 5px;
+        border-radius: 0.5rem;
+        margin-block: 0.5rem;
+        transition: 0.5s all;
+      }
+      &.date {
+        font-weight: lighter;
+        margin-block: 0 0.75rem;
+        position: relative;
+        transition: 0.5s all;
+        &::before {
+          position: absolute;
+          left: -40px;
+          opacity: 0;
+          content: "⏰ ";
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    h1 {
+      transition: 0.5s all;
+      margin-block: 0 1rem;
+      position: relative;
+      &:after {
+        position: absolute;
+        bottom: -2.5px;
+        left: -85px;
+        background: hsl(47, 88%, 63%);
+        content: "";
+        width: 0%;
+        transition: 0.75s all;
+        height: 3px;
+        border-radius: 5rem;
+      }
+    }
+
+    div {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      img {
+        width: 35px;
+        aspect-ratio: 1/1;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
